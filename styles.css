@@ -1,0 +1,85 @@
+/* Core Streamlit Element Styling */
+
+/* Import a clean, professional font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Base font for the entire app */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Main content area styling */
+.main .block-container {
+    padding: 2rem 2.5rem;
+    max-width: 1100px;
+}
+
+/* Header styling */
+h1 {
+    font-weight: 700;
+    color: #1a56db;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+h2 {
+    font-weight: 600;
+    color: #2d3748;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-weight: 600;
+    color: #4a5568;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Button styling */
+.stButton > button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background-color: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    padding: 1.5rem 1rem;
+}
+
+/* Sidebar header styling */
+[data-testid="stSidebar"] h1, 
+[data-testid="stSidebar"] h2, 
+[data-testid="stSidebar"] h3 {
+    color: #1e40af;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 1rem;
+}
+
+/* Sidebar button styling */
+[data-testid="stSidebar"] .stButton > button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
