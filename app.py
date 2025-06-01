@@ -49,8 +49,8 @@ def main():
         st.session_state.documents_added = False
 
     # Main Title and Subtitle
-    st.markdown('<div class="main-title">Welcome to VideoMind</div>', unsafe_allow_html=True)
-    st.markdown('<div class="subtitle">"Turning Monologues into Conversations"</div>', unsafe_allow_html=True)
+    st.markdown("<div style='text-align: center; font-size: 34px; font-weight: bold; color: blue;'> Welcome to VideoMind </div>", unsafe_allow_html=True)
+    st.markdown("<div style='text-align: center; font-size: 22px; color:purple;'>\"Turning Monologues into Conversations\"</div>", unsafe_allow_html=True)
     st.divider()
 
     # This is the prompt to the LLM for summarizing the transcript
