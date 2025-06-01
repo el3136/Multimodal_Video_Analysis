@@ -1,0 +1,7 @@
+pysqlite3-binary
+streamlit==1.44.1
+chromadb==1.0.3
+google-genai==1.9.0
+youtube-transcript-api==1.0.3
+google-api-core==2.24.2
+chroma-hnswlib==0.7.6
