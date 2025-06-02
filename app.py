@@ -50,13 +50,13 @@ def main():
 
     # Main Title and Subtitle
     st.markdown("<div style='text-align: center; font-size: 34px; font-weight: bold; color: blue;'> Welcome to VideoMind </div>", unsafe_allow_html=True)
-    st.markdown("<div style='text-align: center; font-size: 22px; color:purple;'>\"Turning Monologues into Conversations\"</div>", unsafe_allow_html=True)
+    st.markdown("<div style='text-align: center; font-size: 22px; color:purple;'>\"Learn more about the Video!\"</div>", unsafe_allow_html=True)
     st.divider()
 
     # This is the prompt to the LLM for summarizing the transcript
     prompt = "I have a transcription of an audio recording. Generate a brief documentation from it. The documentation should include the following sections:\
                     - Introduction: A detailed overview of the content.\
-                    - Key points: The main ideas or arguments presented in the audio.Include the timestamp \
+                    - Key points: The main ideas or arguments presented in the audio. Include the timestamp \
                         where each key point was discussed. The transcript is provided with timestamps \
                         in [MM:SS] format.\
                     - Conclusion: A brief conclusion or summary of the key takeaways."
@@ -68,13 +68,14 @@ def main():
         VideoMind transforms YouTube videos into interactive conversations. 
         Paste a URL and chat about your video content to get summaries and answer questions.
         
-        ## How It Works:
+        ## What to do:
 
-        1. Paste any YouTube URL.
-        2. AI processes the video transcript.
+        1. Paste any valid YouTube URL.
+        2. Obtain the video transcript.
         3. Get an immediate summary of the video which is downloadable in text file.
         4. Start chatting with the content - ask anything about the video.
-        5. Receive intelligent responses with relevant timestamps and also download the whole chat history in a text file.
+        5. Receive intelligent responses with relevant timestamps citation
+        6. Download the whole chat history in a text file.
         """)
 
         st.markdown("Enter your Google API key below to get started.")
@@ -103,7 +104,7 @@ def main():
                 # Initialize the YouTubeProcessor
                 yt_processor = YouTubeProcessor(video_url=youtube_url)
                 transcript_with_timestamps = yt_processor.transcribe()
-                transcript = yt_processor.get_formatted_transcript()
+                transcript = yt_processor.get_plain_transcript()
                 transcript_with_timestamps_str = ' '.join([f"[{item['start']:.3f}] {item['text']}" for item in transcript_with_timestamps])
                 # Getting the transcipt of the video
                 transcript_button = st.sidebar.button("Get the transcript of the video", key="get_transcript")
@@ -207,7 +208,7 @@ def main():
                 if transcript_with_timestamps_str:
                     st.sidebar.info("Click on 'Ask questions about the video' to start chat.")
                 else:
-                    st.sidebar.warning("No transcript available. Please load a video first.")
+                    st.sidebar.warning("No transcript available. Please give a Youtube video link first.")
 
 if __name__=="__main__":
     main()

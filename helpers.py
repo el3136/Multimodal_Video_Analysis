@@ -60,7 +60,7 @@ class YouTubeProcessor(BaseModel):
         except Exception as e:
             raise e
             
-    def get_formatted_transcript(self):
+    def get_plain_transcript(self):
         """Get transcript as a plain text string."""
         transcript_data = self.transcribe()
         full_transcript = ""
